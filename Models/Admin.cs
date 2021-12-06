@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 
 namespace KitapKatalog.Models
 {
-    public class Kitap
+    public class Admin
     {
         [Key]
-        public int KitapId { get; set; }
-        [Column(TypeName = "Varchar")]
-        [StringLength(40)]
-        public int KitapAdi { get; set; }
+        public int AdminId { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(250)]
-        public string KitapGorsel { get; set; }
-        public int KitapPuan { get; set; }
-        public int YazarId { get; set; }
-        public Yazar KYazar { get; set; }
+        [StringLength(10)]
+        public string KullanıcıAdi { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(30)]
+        public string Sifre { get; set; }
+
+        [Column(TypeName = "Varchar")]
+        [StringLength(1)]
+        public string Yetki { get; set; }
+
 
     }
 }

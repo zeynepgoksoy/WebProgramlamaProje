@@ -10,10 +10,10 @@ namespace KitapKatalog.Models
     public class Tur
     {
         [Key]
-        public int TurID { get; set; }
+        public int TurId { get; set; }
         [Column(TypeName = "Varchar")]
         [StringLength(20)]
         public string TurAd { get; set; }
-        public ICollection<Kitap> Kitaplar { get; set; }
+        public ICollection<Kitap> Kitaps { get; set; }
     }
 }
