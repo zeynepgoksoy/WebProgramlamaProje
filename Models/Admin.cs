@@ -12,15 +12,12 @@ namespace KitapKatalog.Models
         [Key]
         public int AdminId { get; set; }
 
-        [Column(TypeName = "Varchar")]
-        [StringLength(10)]
+        [StringLength(30)]
         public string KullanıcıAdi { get; set; }
 
-        [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Sifre { get; set; }
 
-        [Column(TypeName = "Varchar")]
         [StringLength(1)]
         public string Yetki { get; set; }
 
