@@ -11,7 +11,7 @@ namespace KitapKatalog.Models
     {
         [Key]
         public int TurId { get; set; }
-        [Column(TypeName = "Varchar")]
+
         [StringLength(20)]
         public string TurAd { get; set; }
         public ICollection<Kitap> Kitaps { get; set; }

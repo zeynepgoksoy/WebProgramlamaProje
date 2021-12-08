@@ -11,13 +11,13 @@ namespace KitapKatalog.Models
     {
         [Key]
         public int YazarId { get; set; }
-        [Column(TypeName = "Varchar")]
+
         [StringLength(20)]
         public string YazarAd { get; set; }
-        [Column(TypeName = "Varchar")]
+
         [StringLength(20)]
         public string YazarSoyad { get; set; }
-        [Column(TypeName = "Varchar")]
+
         [StringLength(250)]
         public string YazarGorsel { get; set; }
         public ICollection<Kitap> Kitaps { get; set; }

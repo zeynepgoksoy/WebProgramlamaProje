@@ -11,16 +11,22 @@ namespace KitapKatalog.Models
     {
         [Key]
         public int KitapId { get; set; }
-        [Column(TypeName = "Varchar")]
+
         [StringLength(40)]
         public int KitapAdi { get; set; }
 
-        [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string KitapGorsel { get; set; }
         public int KitapPuan { get; set; }
+        
+        // Kitabin Yazar ile iliskisi
         public int YazarId { get; set; }
         public Yazar KYazar { get; set; }
+        
+        //Kitabin turle iliskisi
+        public int TurId { get; set; }
+        
+        public Tur KTur { get; set; }
 
     }
 }
