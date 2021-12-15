@@ -20,6 +20,11 @@ namespace KitapKatalog.Models
         {
 
         }
+
+        public KitapKatalogContext()
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder ob)
         {
             ob.UseSqlServer(@"Server= (localdb)\mssqllocaldb; Database=KitapKatalog ; Trusted_Connection=True;"); 
