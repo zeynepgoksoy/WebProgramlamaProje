@@ -29,5 +29,24 @@ namespace KitapKatalog.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult Delete(int id)
+        {
+            var tur_vrb = c.Turs.Find(id);
+            c.Turs.Remove(tur_vrb);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public IActionResult GetTur(int id)
+        {
+            var tur_vrb = c.Turs.Find(id);
+            return View("GetTur",tur_vrb);
+        }
+        public IActionResult Update(Tur t)
+        {
+            var tur_vrb= c.Turs.Find(t.TurId);
+            tur_vrb.TurAd = t.TurAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

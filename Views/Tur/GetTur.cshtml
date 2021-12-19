@@ -1,0 +1,19 @@
+﻿@model KitapKatalog.Models.Tur
+@{
+    ViewData["Title"] = "GetTur";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br/>
+<h1>GetTur(Tür Güncelleme)</h1>
+<br/>
+@using (Html.BeginForm("Update", "Tur", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.TurAd)
+        @Html.TextBoxFor(x => x.TurAd, new {@class= " form-control" })
+        @Html.HiddenFor(x => x.TurId)
+    </div>  
+    <br/>
+    <button class="btn btn-warning">Güncelle</button>
+
+   }

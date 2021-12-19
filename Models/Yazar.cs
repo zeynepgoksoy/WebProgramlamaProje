@@ -12,10 +12,10 @@ namespace KitapKatalog.Models
         [Key]
         public int YazarId { get; set; }
 
-        [StringLength(20)]
+        [StringLength(30)]
         public string YazarAd { get; set; }
 
-        [StringLength(20)]
+        [StringLength(30)]
         public string YazarSoyad { get; set; }
 
         [StringLength(250)]

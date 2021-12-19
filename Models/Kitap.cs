@@ -12,11 +12,12 @@ namespace KitapKatalog.Models
         [Key]
         public int KitapId { get; set; }
 
-        [StringLength(40)]
-        public int KitapAdi { get; set; }
+        [StringLength(50)]
+        public string KitapAdi { get; set; }
 
         [StringLength(250)]
         public string KitapGorsel { get; set; }
+        public int KitapSayfa { get;  set; }
         public int KitapPuan { get; set; }
         
         // Kitabin Yazar ile iliskisi

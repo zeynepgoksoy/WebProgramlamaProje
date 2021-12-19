@@ -1,0 +1,33 @@
+﻿@using KitapKatalog.Models
+@model List<Kitap>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br/>
+<table class="table table-bordered">
+
+    <tr>
+        <th>KitapId</th>
+        <th>Kitap Adi</th>
+        <th>Kitap Sayfa</th>
+        <th>Kitap Puan</th>
+        <th>Yazar</th>
+        <th>Tür</th>
+    </tr>
+    @foreach (var k in Model) 
+    {
+        <tr>
+            <td>@k.KitapId</td>
+            <td>@k.KitapAdi</td>
+            <td>@k.KitapSayfa</td>
+            <td>@k.KitapPuan</td>
+            <td>@k.KYazar</td>
+            <td>@k.KTur</td>
+        </tr>
+    
+    }
+
+</table>
+

@@ -4,14 +4,16 @@ using KitapKatalog.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace KitapKatalog.Migrations
 {
     [DbContext(typeof(KitapKatalogContext))]
-    partial class KitapKatalogContextModelSnapshot : ModelSnapshot
+    [Migration("20211218231146_uc")]
+    partial class uc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
