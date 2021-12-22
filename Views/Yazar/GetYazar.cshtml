@@ -1,0 +1,21 @@
+﻿@model KitapKatalog.Models.Yazar
+@{
+    ViewData["Title"] = "GetYazar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>GetYazar(Yazar Güncelleme)</h1>
+<br />
+@using (Html.BeginForm("Update", "Yazar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.YazarAd)
+        @Html.TextBoxFor(x => x.YazarAd, new { @class = " form-control" })
+        @Html.HiddenFor(x => x.YazarId)
+    </div>
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+
+}
+

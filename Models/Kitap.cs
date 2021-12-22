@@ -14,6 +14,7 @@ namespace KitapKatalog.Models
 
         [StringLength(50)]
         public string KitapAdi { get; set; }
+        public string KitapTanıtım { get; set; } //Kitap içerigi tanıtımı
 
         [StringLength(250)]
         public string KitapGorsel { get; set; }
@@ -22,12 +23,12 @@ namespace KitapKatalog.Models
         
         // Kitabin Yazar ile iliskisi
         public int YazarId { get; set; }
-        public Yazar KYazar { get; set; }
+        public virtual Yazar Yazar { get; set; }
         
         //Kitabin turle iliskisi
         public int TurId { get; set; }
         
-        public Tur KTur { get; set; }
+        public virtual Tur Tur { get; set; }
 
     }
 }

@@ -13,9 +13,9 @@ namespace KitapKatalog.Models
         public int KitapAdet { get; set; }
 
         public DateTime Tarih { get; set; }
+        
+        //public int User (Üye bilgisi)
         public ICollection<Kitap> Kitaps { get; set; }
-        public ICollection<Yazar> Yazars { get; set; }
-
 
     }
 }

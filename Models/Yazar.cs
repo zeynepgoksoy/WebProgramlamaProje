@@ -14,6 +14,7 @@ namespace KitapKatalog.Models
 
         [StringLength(30)]
         public string YazarAd { get; set; }
+        public string YazarOzgecmis { get; set; }
 
         [StringLength(30)]
         public string YazarSoyad { get; set; }

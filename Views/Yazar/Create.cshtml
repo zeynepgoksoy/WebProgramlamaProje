@@ -1,0 +1,20 @@
+﻿@model KitapKatalog.Models.Yazar
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Yazar Ekleme Sayfası (Create)</h1>
+<br/>
+<form class="form-group" method="post" margin>
+    @Html.LabelFor(x => x.YazarAd)
+    @Html.TextBoxFor(x => x.YazarAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.YazarSoyad)
+    @Html.TextBoxFor(x => x.YazarSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.YazarGorsel)
+    @Html.TextBoxFor(x => x.YazarGorsel)
+    <br/>
+    <button class="btn btn-info">Kaydet</button>
+</form>

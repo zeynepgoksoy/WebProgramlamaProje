@@ -15,5 +15,17 @@ namespace KitapKatalog.Controllers
             var kitaplar = c.Kitaps.ToList();
             return View(kitaplar);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Kitap k)
+        {
+            c.Kitaps.Add(k);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

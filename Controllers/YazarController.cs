@@ -1,0 +1,52 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using KitapKatalog.Models;
+
+namespace KitapKatalog.Controllers
+{
+    public class YazarController : Controller
+    {
+        KitapKatalogContext c = new KitapKatalogContext();
+        public IActionResult Index()
+        {
+            var yazarlar = c.Yazars.ToList();
+            return View(yazarlar);
+        }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Yazar y)
+        {
+            c.Yazars.Add(y);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+        public IActionResult Delete(int id)
+        {
+            var yazar = c.Yazars.Find(id);
+            c.Yazars.Remove(yazar);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+        public IActionResult GetYazar(int id)
+        {
+            var yazar = c.Yazars.Find(id);
+            return View("GetYazar",yazar);
+        }
+        public IActionResult Update(Yazar y)
+        {
+            var yazar = c.Yazars.Find(y.YazarId);
+            yazar.YazarAd = y.YazarAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+    }
+}

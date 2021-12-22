@@ -21,6 +21,12 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\startbootstrap-creative-gh-pages\assets\img\portfolio\fullsize\" />
+    <Folder Include="wwwroot\startbootstrap-creative-gh-pages\assets\img\portfolio\thumbnails\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\startbootstrap-creative-gh-pages\js\scripts.js" />
   </ItemGroup>
 
 </Project>

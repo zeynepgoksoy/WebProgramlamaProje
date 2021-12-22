@@ -1,0 +1,32 @@
+﻿@using KitapKatalog.Models
+@model List<Yazar>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yazarlar Listeleniyor</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>YazarID</th>
+        <th>Yazar Adı</th>
+        <th>Yazar Soyadı</th>
+        <th>Yazar Görsel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var y in Model) 
+    { 
+        <tr>
+            <td>@y.YazarId</td>
+            <td>@y.YazarAd</td>
+            <td>@y.YazarSoyad</td>
+            <td>@y.YazarGorsel</td>
+            <td><a href="Yazar/Create/@y.YazarId" class="btn btn-danger">Sil</a></td>
+            <td><a href="Yazar/GetYazar/@y.YazarId" class="btn btn-success">Güncelle</a></td>
+            <td>Güncelle</td>
+        </tr>
+    }
+
+</table>
+<a href="Yazar/Create/" class="btn btn-info">Yazar Ekle</a>
