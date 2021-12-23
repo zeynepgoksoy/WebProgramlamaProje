@@ -1,0 +1,30 @@
+﻿@using KitapKatalog.Models
+@model List<Kitap>
+@{
+    ViewData["Title"] = "YazarDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+</br>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item active">@ViewBag.Ad @ViewBag.Soyad'ın Kitapları:</li> 
+</ol>
+<table class="table table-hover">
+    <tr>
+        <th>Kitap Id</th>
+        <th>Kitap Ad</th>
+        <th>Kitap Tanıtım</th>
+        <th>Kitap Sayfa</th>
+        <th>Kitap Görsel</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.KitapId</td>
+            <td>@k.KitapAdi</td>
+            <td>@k.KitapTanıtım</td>
+            <td>@k.KitapSayfa</td>
+            <td>@k.KitapGorsel</td>
+        </tr>
+    }
+
+</table>

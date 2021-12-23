@@ -1,37 +1,44 @@
 ﻿@model KitapKatalog.Models.Kitap
-
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "GetKitap";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
-<h1> Ekleme Sayfası</h1>
-<br/>
-<form class="form-group" method="post">
+</br>
+<h1>GetKitap</h1>
+</br>
+@using (Html.BeginForm("Update", "Kitap", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.KitapId)
     @Html.LabelFor(x => x.KitapAdi)
+
     @Html.TextBoxFor(x => x.KitapAdi, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.KitapSayfa)
+
     @Html.TextBoxFor(x => x.KitapSayfa, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.KitapGorsel)
+
     @Html.TextBoxFor(x => x.KitapGorsel, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.KitapPuan)
+
     @Html.TextBoxFor(x => x.KitapPuan, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Yazar.YazarId)
+
     @Html.TextBoxFor(x => x.YazarId, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Tur)
     @Html.DropDownListFor(x => x.TurId, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
-    @*@Html.TextBoxFor(x => x.TurId, new { @class = "form-control" })*@
     <br />
     @Html.LabelFor(x => x.KitapTanıtım)
-    @Html.TextBoxFor(x=> x.KitapTanıtım, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.KitapTanıtım, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.Durum)
     @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Kaydet</button>
-</form>
+
+    <button class="btn btn-warning">Güncelle</button>
+}

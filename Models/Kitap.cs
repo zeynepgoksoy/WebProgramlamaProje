@@ -20,7 +20,8 @@ namespace KitapKatalog.Models
         public string KitapGorsel { get; set; }
         public int KitapSayfa { get;  set; }
         public int KitapPuan { get; set; }
-        
+        public bool Durum { get; set; }
+
         // Kitabin Yazar ile iliskisi
         public int YazarId { get; set; }
         public virtual Yazar Yazar { get; set; }

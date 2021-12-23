@@ -14,6 +14,7 @@
         <th>Yazar Görsel</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>Yazarın Kitapları</th>
     </tr>
     @foreach (var y in Model) 
     { 
@@ -24,8 +25,9 @@
             <td>@y.YazarGorsel</td>
             <td><a href="Yazar/Create/@y.YazarId" class="btn btn-danger">Sil</a></td>
             <td><a href="Yazar/GetYazar/@y.YazarId" class="btn btn-success">Güncelle</a></td>
-            <td>Güncelle</td>
+            <td><a href="Yazar/YazarDetay/@y.YazarId" class="btn btn-primary">Detay</td>
         </tr>
+        
     }
 
 </table>

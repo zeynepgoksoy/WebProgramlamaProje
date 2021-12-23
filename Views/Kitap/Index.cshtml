@@ -15,17 +15,25 @@
         <th>Kitap Puan</th>
         <th>Yazar</th>
         <th>Tür</th>
+        <th>Kitap Tanıtım</th>
+        <th>Durum</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
     @foreach (var k in Model) 
     {
-        <tr>
-            <td>@k.KitapId</td>
-            <td>@k.KitapAdi</td>
-            <td>@k.KitapSayfa</td>
-            <td>@k.KitapPuan</td>
-            <td>@k.Yazar</td>
-            <td>@k.Tur</td>
-        </tr>
+    <tr>
+        <td>@k.KitapId</td>
+        <td>@k.KitapAdi</td>
+        <td>@k.KitapSayfa</td>
+        <td>@k.KitapPuan</td>
+        <td>@k.Yazar.YazarAd @k.Yazar.YazarSoyad</td>
+        <td>@k.Tur.TurAd</td>
+        <td>@k.KitapTanıtım</td>
+        <td>@k.Durum</td>
+        <td><a href="/Kitap/Delete/@k.KitapId" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Kitap/GetKitap/@k.KitapId" class="btn btn-success">Güncelle</a></td>
+    </tr>
     
     }
 

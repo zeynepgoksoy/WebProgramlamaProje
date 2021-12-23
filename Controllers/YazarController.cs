@@ -48,5 +48,14 @@ namespace KitapKatalog.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public IActionResult YazarDetay(int id)
+        {
+            var kitaplar = c.Kitaps.Where(x => x.YazarId == id).ToList();
+            var yzrAd  = c.Yazars.Where(x => x.YazarId == id).Select(y=> y.YazarAd).FirstOrDefault();
+            var yzrSoyad = c.Yazars.Where(x=>x.YazarId ==id).Select(y=>y.YazarSoyad).FirstOrDefault();
+            ViewBag.Ad = yzrAd;
+            ViewBag.Soyad = yzrSoyad;
+            return View(kitaplar);
+        }
     }
 }
