@@ -1,0 +1,34 @@
+﻿@using KitapKatalog.Models
+@model List<Admin>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Kullanıcılar Listeleniyor</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>AdminId</th>
+        <th>Kullanıcı Adı</th>
+        <th>Yetki</th>
+        <th>Sifre</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+        <tr>
+            <td>@u.AdminId</td>
+            <td>@u.KullaniciAdi</td>
+            <td>@u.Yetki</td>
+            <td>@u.Sifre</td>
+            <td><a href="User/Delete/@u.AdminId" class="btn btn-danger">Sil</a></td>
+            <td><a href="User/GetUser/@u.AdminId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+
+    }
+
+</table>
+<a href="Admin/Create/" class="btn btn-info">Admin Ekle</a>
+

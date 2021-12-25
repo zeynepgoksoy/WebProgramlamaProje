@@ -1,0 +1,25 @@
+﻿@model KitapKatalog.Models.Admin
+@{
+    ViewData["Title"] = "GetAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Kullanıncı Güncelleme</h1>
+<br />
+@using (Html.BeginForm("Update", "Admin", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.AdminId)
+    @Html.LabelFor(x => x.KullaniciAdi)
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Yetki)
+    @Html.TextBoxFor(x => x.Yetki, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sifre)
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}
+

@@ -1,0 +1,26 @@
+﻿@model KitapKatalog.Models.User
+@{
+    ViewData["Title"] = "GetUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h1>Kullanıncı Güncelleme</h1>
+<br />
+@using (Html.BeginForm("Update", "User", FormMethod.Post))
+{
+
+    @Html.HiddenFor(x => x.UserId)
+    @Html.LabelFor(x => x.UserAd)
+    @Html.TextBoxFor(x => x.UserAd, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UserSoyad)
+    @Html.TextBoxFor(x => x.UserSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UserMail)
+    @Html.TextBoxFor(x => x.UserMail, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Sifre)
+    @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}

@@ -13,9 +13,11 @@ namespace KitapKatalog.Models
         public int AdminId { get; set; }
 
         [StringLength(30)]
-        public string KullanıcıAdi { get; set; }
+        [EmailAddress(ErrorMessage = "Lütfen geçerli bir kullanıcı adı giriniz")]
+        public string KullaniciAdi { get; set; }
 
-        [StringLength(30)]
+        [StringLength(3)]
+        [Required(ErrorMessage = "Şifre girilmelidir")]
         public string Sifre { get; set; }
 
         [StringLength(1)]

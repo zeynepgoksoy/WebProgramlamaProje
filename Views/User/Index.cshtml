@@ -1,0 +1,38 @@
+﻿@using KitapKatalog.Models
+@model List<User>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h1>Kullanıcılar Listeleniyor</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>KullanıcıId</th>
+        <th>Kullanıcı Adı</th>
+        <th>Kullanıcı Soyadı</th>
+        <th>Kullanıcı Mail</th>
+        <th>Sifre</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Kullanıcının listesi</th>
+    </tr>
+    @foreach (var u in Model)
+    {
+<tr>
+    <td>@u.UserId</td>
+    <td>@u.UserAd</td>
+    <td>@u.UserSoyad</td>
+    <td>@u.UserMail</td>
+    <td>@u.Sifre</td>
+    <td><a href="User/Delete/@u.UserId" class="btn btn-danger">Sil</a></td>
+    <td><a href="User/GetUser/@u.UserId" class="btn btn-success">Güncelle</a></td>
+    <td><a href="Yazar/UserListe/@u.UserId" class="btn btn-primary">Kullanıcının Kitaplığı</td>
+</tr>
+
+    }
+
+</table>
+<a href="User/Create/" class="btn btn-info">Kullanıcı Ekle</a>
+

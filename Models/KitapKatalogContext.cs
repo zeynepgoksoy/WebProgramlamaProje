@@ -14,6 +14,7 @@ namespace KitapKatalog.Models
         public DbSet<Kitap> Kitaps { get; set; }
         public DbSet<Yazar> Yazars { get; set; }
         public DbSet<Tur> Turs { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<KitapListe> KitapListes{ get; set; }
 
         public KitapKatalogContext(DbContextOptions<KitapKatalogContext> options ) : base(options)

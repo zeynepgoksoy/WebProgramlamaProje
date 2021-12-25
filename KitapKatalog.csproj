@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.21">
@@ -20,13 +21,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\startbootstrap-creative-gh-pages\assets\img\portfolio\fullsize\" />
     <Folder Include="wwwroot\startbootstrap-creative-gh-pages\assets\img\portfolio\thumbnails\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\startbootstrap-creative-gh-pages\js\scripts.js" />
+    <None Include="wwwroot\weblogin\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\weblogin\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\weblogin\js\jquery-2.1.4.min.js" />
+    <None Include="wwwroot\weblogin\js\jquery.magnific-popup.js" />
   </ItemGroup>
 
 </Project>
