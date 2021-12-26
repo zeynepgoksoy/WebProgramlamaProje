@@ -32,6 +32,10 @@ namespace KitapKatalog.Controllers
         [HttpPost]
         public IActionResult Create(Kitap k)
         {
+            if (!!ModelState.IsValid)
+            {
+                return View("Create");
+            }
             c.Kitaps.Add(k);
             c.SaveChanges();
             return RedirectToAction("Index");

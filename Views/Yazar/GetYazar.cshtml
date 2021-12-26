@@ -15,6 +15,21 @@
         @Html.HiddenFor(x => x.YazarId)
     </div>
     <br />
+    <div class="form-group">
+        @Html.LabelFor(x => x.YazarSoyad)
+        @Html.TextBoxFor(x => x.YazarSoyad, new { @class = " form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(x => x.YazarSoyad)
+        @Html.TextBoxFor(x => x.YazarSoyad, new { @class = " form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(x => x.YazarGorsel)
+        @Html.TextBoxFor(x => x.YazarGorsel, new { @class = " form-control" })
+    </div>
+    <br />
     <button class="btn btn-warning">Güncelle</button>
 
 }

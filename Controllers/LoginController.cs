@@ -40,6 +40,7 @@ namespace KitapKatalog.Controllers
             return View();
 
         }
+
         [HttpGet]
         public async Task<IActionResult> LogOut()
         {

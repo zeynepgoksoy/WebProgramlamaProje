@@ -14,9 +14,8 @@
         <th>Kullanıcı Soyadı</th>
         <th>Kullanıcı Mail</th>
         <th>Sifre</th>
-        <th>Sil</th>
+        @*<th>Sil</th>*@
         <th>Güncelle</th>
-        <th>Kullanıcının listesi</th>
     </tr>
     @foreach (var u in Model)
     {
@@ -26,13 +25,12 @@
     <td>@u.UserSoyad</td>
     <td>@u.UserMail</td>
     <td>@u.Sifre</td>
-    <td><a href="User/Delete/@u.UserId" class="btn btn-danger">Sil</a></td>
-    <td><a href="User/GetUser/@u.UserId" class="btn btn-success">Güncelle</a></td>
-    <td><a href="Yazar/UserListe/@u.UserId" class="btn btn-primary">Kullanıcının Kitaplığı</td>
+    @*<td><a href="/User/Delete/@u.UserId" class="btn btn-danger">Sil</a></td>*@
+    <td><a href="/User/GetUser/@u.UserId" class="btn btn-success">Güncelle</a></td>
 </tr>
 
     }
 
 </table>
-<a href="User/Create/" class="btn btn-info">Kullanıcı Ekle</a>
+<a href="/User/Create/" class="btn btn-info">Kullanıcı Ekle</a>
 

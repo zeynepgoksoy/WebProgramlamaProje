@@ -13,6 +13,7 @@ namespace KitapKatalog.Models
         public int KitapId { get; set; }
 
         [StringLength(50)]
+        [Required(ErrorMessage = "Kitap adı boş geçilemez")]
         public string KitapAdi { get; set; }
         public string KitapTanıtım { get; set; } //Kitap içerigi tanıtımı
 
@@ -20,9 +21,12 @@ namespace KitapKatalog.Models
         public string KitapGorsel { get; set; }
         public int KitapSayfa { get;  set; }
         public int KitapPuan { get; set; }
+
+        [Required(ErrorMessage = "Durum Boş Geçilemez")]
         public bool Durum { get; set; }
 
         // Kitabin Yazar ile iliskisi
+        [Required(ErrorMessage = "YazarID boş geçilemez")]
         public int YazarId { get; set; }
         public virtual Yazar Yazar { get; set; }
         
